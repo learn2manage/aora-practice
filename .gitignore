@@ -33,3 +33,14 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+
+.env
+android/
+ios/
+
+*.ttf
+*.mp4
+*.mov
+babel.config.js
+.eslintrc
