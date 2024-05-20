@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 
-const Search = () => {
+const Test = () => {
     return (
         <View>
-            <Text>Search</Text>
+            <Text>Test</Text>
         </View>
     );
 };
 
-export default Search;
+export default Test;
