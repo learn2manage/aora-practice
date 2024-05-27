@@ -16,6 +16,24 @@ export default function App() {
                     <Link href="/home" style={{ color: 'blue' }}>
                         Go to Home
                     </Link>
+                    <Image
+                        source={images.cards}
+                        className="max-w-[380px] w-full h-[300px]"
+                        resizeMode="contain"></Image>
+                    <View className="relative mt-5">
+                        <Text className="text-3xl text-white font-bold text-center">
+                            Discover endless possibilites with{' '}
+                            <Text className="text-secondary-200">Aora</Text>
+                            <Image
+                                source={images.path}
+                                className="w-[136px] h-[15px] absolute -bottom-2 -right-8"
+                                resizeMode="contain"></Image>
+                        </Text>
+                    </View>
+                    <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
+                        Where creativity meets innovation: embark on a journey
+                        of limitless exploration with Aora
+                    </Text>
                 </View>
             </ScrollView>
         </SafeAreaView>
