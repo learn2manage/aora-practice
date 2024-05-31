@@ -1,4 +1,11 @@
-import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
+import {
+    View,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    Image,
+    KeyboardTypeOptions,
+} from 'react-native';
 import React, { useState } from 'react';
 import { icons } from '../constants';
 
@@ -8,7 +15,7 @@ interface Props {
     placeholder?: string;
     handleChangeText: (text: string) => void;
     otherStyles?: string;
-    keyboardType?: string;
+    keyboardType?: KeyboardTypeOptions;
 }
 
 const FormField = ({
