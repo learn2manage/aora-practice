@@ -65,8 +65,8 @@ export async function createUser(
         );
 
         return newUser;
-    } catch (error: any) {
-        throw new Error(error);
+    } catch (error) {
+        throw new Error(String(error));
     }
 }
 
@@ -80,8 +80,8 @@ export async function signIn(email: string, password: string) {
         );
 
         return session;
-    } catch (error: any) {
-        throw new Error(error);
+    } catch (error) {
+        throw new Error(String(error));
     }
 }
 
@@ -91,8 +91,8 @@ export async function getAccount() {
         const currentAccount = await account.get();
 
         return currentAccount;
-    } catch (error: any) {
-        throw new Error(error);
+    } catch (error) {
+        throw new Error(String(error));
     }
 }
 
@@ -111,8 +111,8 @@ export async function getCurrentUser() {
         if (!currentUser) throw Error;
 
         return currentUser.documents[0];
-    } catch (error: any) {
-        console.log(error);
+    } catch (error) {
+        console.log(String(error));
         return null;
     }
 }
@@ -123,8 +123,8 @@ export async function signOut() {
         const session = await account.deleteSession('current');
 
         return session;
-    } catch (error: any) {
-        throw new Error(error);
+    } catch (error) {
+        throw new Error(String(error));
     }
 }
 
@@ -144,8 +144,8 @@ export async function uploadFile(file: any, type: string) {
 
         const fileUrl = await getFilePreview(uploadedFile.$id, type);
         return fileUrl;
-    } catch (error: any) {
-        throw new Error(error);
+    } catch (error) {
+        throw new Error(String(error));
     }
 }
 
@@ -172,8 +172,8 @@ export async function getFilePreview(fileId: string, type: string) {
         if (!fileUrl) throw Error;
 
         return fileUrl;
-    } catch (error: any) {
-        throw new Error(error);
+    } catch (error) {
+        throw new Error(String(error));
     }
 }
 
@@ -205,8 +205,8 @@ export async function createVideoPost(form: {
         );
 
         return newPost;
-    } catch (error: any) {
-        throw new Error(error);
+    } catch (error) {
+        throw new Error(String(error));
     }
 }
 
@@ -219,8 +219,8 @@ export async function getAllPosts() {
         );
 
         return posts.documents;
-    } catch (error: any) {
-        throw new Error(error);
+    } catch (error) {
+        throw new Error(String(error));
     }
 }
 
@@ -234,8 +234,8 @@ export async function getUserPosts(userId: string) {
         );
 
         return posts.documents;
-    } catch (error: any) {
-        throw new Error(error);
+    } catch (error) {
+        throw new Error(String(error));
     }
 }
 
@@ -251,8 +251,8 @@ export async function searchPosts(query: string) {
         if (!posts) throw new Error('Something went wrong');
 
         return posts.documents;
-    } catch (error: any) {
-        throw new Error(error);
+    } catch (error) {
+        throw new Error(String(error));
     }
 }
 
@@ -266,7 +266,7 @@ export async function getLatestPosts() {
         );
 
         return posts.documents;
-    } catch (error: any) {
-        throw new Error(error);
+    } catch (error) {
+        throw new Error(String(error));
     }
 }
