@@ -18,7 +18,7 @@ const CustomButton = ({
 }: Props) => {
     return (
         <TouchableOpacity
-            className={`bg-secondary round-xl min-h-[62px] justify-center items-center ${containerStyles} ${
+            className={`bg-secondary rounded-xl min-h-[62px] justify-center items-center ${containerStyles} round ${
                 isLoading ? 'opacity-50' : ''
             }}`}
             disabled={isLoading}
