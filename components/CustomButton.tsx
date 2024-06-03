@@ -6,7 +6,7 @@ interface Props {
     handlePress: () => void;
     containerStyles: string;
     textStyles?: string;
-    isLoading: boolean;
+    isLoading?: boolean;
 }
 
 const CustomButton = ({
@@ -14,7 +14,7 @@ const CustomButton = ({
     handlePress,
     containerStyles,
     textStyles,
-    isLoading,
+    isLoading = false,
 }: Props) => {
     return (
         <TouchableOpacity
