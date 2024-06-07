@@ -7,6 +7,7 @@ import {
     ImageGravity,
     Query,
     Storage,
+    Models,
 } from 'react-native-appwrite';
 
 export const appwriteConfig = {
