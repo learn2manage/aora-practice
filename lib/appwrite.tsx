@@ -287,7 +287,7 @@ export async function searchPosts(query: string) {
 }
 
 // Get latest created video posts
-export async function getLatestPosts() {
+export async function getLatestPosts(): Promise<Models.Document[]> {
     try {
         const posts = await databases.listDocuments(
             appwriteConfig.databaseId,

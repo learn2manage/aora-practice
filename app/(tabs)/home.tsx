@@ -7,6 +7,7 @@ import { images } from '@/constants';
 import SearchInput from '@/components/SearchInput';
 import Trending from '@/components/Trending';
 import EmptyState from '@/components/EmptyState';
+import VideoCard from '@/components/VideoCard';
 
 interface Post {
     $id: string;
@@ -26,14 +27,21 @@ const Home = () => {
         await refetch();
         setRefreshing(false);
     };
-    console.log('posts: ', posts);
+    console.log('latestPosts: ', latestPosts);
     return (
         <SafeAreaView className="bg-primary h-full">
             <FlatList
                 data={posts}
                 keyExtractor={(item) => item.$id}
                 renderItem={({ item }) => (
-                    <Text className="text-3xl text-white">{item.title} </Text>
+                    // <Text className="text-3xl text-white">{item.title} </Text>
+                    <VideoCard
+                        title={item.title}
+                        thumbnail={item.thumbnail}
+                        video={item.video}
+                        creator={item.creator.username}
+                        avatar={item.creator.avatar}
+                    />
                 )}
                 ListHeaderComponent={() => (
                     <View className="flex my-6 px-4 space-y-6">
@@ -59,9 +67,7 @@ const Home = () => {
                             <Text className="text-gray-100 text-lg font-pregular mb-3">
                                 Latest Videos
                             </Text>
-                            <Trending
-                                posts={[{ id: 1 }, { id: 2 }, { id: 3 }] ?? []}
-                            />
+                            <Trending posts={latestPosts ?? []} />
                         </View>
                     </View>
                 )}

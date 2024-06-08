@@ -1,20 +1,21 @@
+import { ImageSourcePropType } from 'react-native';
 interface Icons {
-  [key: string]: string;
+  [key: string]: ImageSourcePropType;
 }
 
-const bookmark: string = require("../assets/icons/bookmark.png");
-const home: string = require("../assets/icons/home.png");
-const plus: string = require("../assets/icons/plus.png");
-const profile: string = require("../assets/icons/profile.png");
-const leftArrow: string = require("../assets/icons/left-arrow.png");
-const menu: string = require("../assets/icons/menu.png");
-const search: string = require("../assets/icons/search.png");
-const upload: string = require("../assets/icons/upload.png");
-const rightArrow: string = require("../assets/icons/right-arrow.png");
-const logout: string = require("../assets/icons/logout.png");
-const eyeHide: string = require("../assets/icons/eye-hide.png");
-const eye: string = require("../assets/icons/eye.png");
-const play: string = require("../assets/icons/play.png");
+const bookmark: ImageSourcePropType = require("../assets/icons/bookmark.png");
+const home: ImageSourcePropType = require("../assets/icons/home.png");
+const plus: ImageSourcePropType = require("../assets/icons/plus.png");
+const profile: ImageSourcePropType = require("../assets/icons/profile.png");
+const leftArrow: ImageSourcePropType = require("../assets/icons/left-arrow.png");
+const menu: ImageSourcePropType = require("../assets/icons/menu.png");
+const search: ImageSourcePropType = require("../assets/icons/search.png");
+const upload: ImageSourcePropType = require("../assets/icons/upload.png");
+const rightArrow: ImageSourcePropType = require("../assets/icons/right-arrow.png");
+const logout: ImageSourcePropType = require("../assets/icons/logout.png");
+const eyeHide: ImageSourcePropType = require("../assets/icons/eye-hide.png");
+const eye: ImageSourcePropType = require("../assets/icons/eye.png");
+const play: ImageSourcePropType = require("../assets/icons/play.png");
 
 const icons: Icons = {
   play,

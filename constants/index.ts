@@ -3,7 +3,7 @@ import importedIcons from "./icons";
 import importedImages from "./images";
 
 interface Icons {
-  [key: string]: string;
+  [key: string]: ImageSourcePropType;
 }
 
 interface Images {
