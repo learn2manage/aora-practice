@@ -1,4 +1,13 @@
-import icons from "./icons";
-import images from "./images";
+import importedIcons from "./icons";
+import importedImages from "./images";
 
-export { icons, images };
+interface Icons {
+  [key: string]: string;
+}
+
+interface Images {
+  [key: string]: string;
+}
+
+export const icons: Icons = importedIcons;
+export const images: Images = importedImages;

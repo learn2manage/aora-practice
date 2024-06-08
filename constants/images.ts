@@ -1,11 +1,23 @@
-const images = {
-    profile: require('../assets/images/profile.png'),
-    thumbnail: require('../assets/images/thumbnail.png'),
-    cards: require('../assets/images/cards.png'),
-    path: require('../assets/images/path.png'),
-    logo: require('../assets/images/logo.png'),
-    logoSmall: require('../assets/images/logo-small.png'),
-    empty: require('../assets/images/empty.png'),
-  };
-  
-  export default images;
+interface Images {
+  [key: string]: string;
+}
+
+const profile: string = require("../assets/images/profile.png");
+const thumbnail: string = require("../assets/images/thumbnail.png");
+const cards: string = require("../assets/images/cards.png");
+const path: string = require("../assets/images/path.png");
+const logo: string = require("../assets/images/logo.png");
+const logoSmall: string = require("../assets/images/logo-small.png");
+const empty: string = require("../assets/images/empty.png");
+
+const images: Images = {
+  profile,
+  thumbnail,
+  cards,
+  path,
+  logo,
+  logoSmall,
+  empty,
+};
+
+export default images;
