@@ -9,27 +9,16 @@ import Trending from '@/components/Trending';
 import EmptyState from '@/components/EmptyState';
 import { Models } from 'react-native-appwrite';
 
+interface Post {
+    $id: string;
+    title: string;
+    // include other properties if there are any
+}
+
 const Home = () => {
     const { data: posts, refetch } = useAppwrite(getAllPosts);
     const { data: latestPosts } = useAppwrite(getLatestPosts);
-    const [data, setData] = useState<Models.Document[]>([]);
     const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            try {
-                const response = await getAllPosts();
-                setData(response);
-            } catch (error) {
-                console.log(error);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-        fetchData();
-    }, []);
-    console.log(data);
 
     const [refreshing, setRefreshing] = useState(false);
 
@@ -38,14 +27,14 @@ const Home = () => {
         await refetch();
         setRefreshing(false);
     };
-
+    console.log('posts: ', posts);
     return (
         <SafeAreaView className="bg-primary h-full">
             <FlatList
-                data={[{ id: 1 }, { id: 2 }, { id: 3 }]}
-                keyExtractor={(item) => item.id.toString()}
+                data={posts}
+                keyExtractor={(item) => item.$id}
                 renderItem={({ item }) => (
-                    <Text className="text-3xl text-white">{item.id} </Text>
+                    <Text className="text-3xl text-white">{item.title} </Text>
                 )}
                 ListHeaderComponent={() => (
                     <View className="flex my-6 px-4 space-y-6">

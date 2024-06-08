@@ -211,8 +211,37 @@ export async function createVideoPost(form: {
     }
 }
 
+interface Post {
+    $collectionId: string;
+    $createdAt: string;
+    $databaseId: string;
+    $id: string;
+    $permissions: any[];
+    $tenant: string;
+    $updatedAt: string;
+    creator: Creator;
+    prompt: string;
+    thumbnail: string;
+    title: string;
+    video: string;
+}
+
+interface Creator {
+    $collectionId: string;
+    $createdAt: string;
+    $databaseId: string;
+    $id: string;
+    $permissions: Function[];
+    $tenant: string;
+    $updatedAt: string;
+    accountId: string;
+    avatar: string;
+    email: string;
+    username: string;
+}
+
 // Get all video Posts
-export async function getAllPosts() {
+export async function getAllPosts(): Promise<Models.Document[]> {
     try {
         const posts = await databases.listDocuments(
             appwriteConfig.databaseId,

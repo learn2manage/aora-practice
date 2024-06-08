@@ -1,8 +1,10 @@
 import { Alert } from 'react-native';
 import { useEffect, useState } from 'react';
+import { Models } from 'react-native-appwrite';
 
-const useAppwrite = (fn) => {
-    const [data, setData] = useState([]);
+const useAppwrite = (fn: () => Promise<Models.Document[]>) => {
+    //const [data, setData] = useState<Models.Document[]>([]);
+    const [data, setData] = useState<Models.Document[]>([]);
     const [loading, setLoading] = useState(true);
 
     const fetchData = async () => {
@@ -11,7 +13,7 @@ const useAppwrite = (fn) => {
             const res = await fn();
             setData(res);
         } catch (error) {
-            Alert.alert('Error', error.message);
+            Alert.alert('Error', String(error));
         } finally {
             setLoading(false);
         }
