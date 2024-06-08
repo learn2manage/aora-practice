@@ -1,3 +1,4 @@
+import { ImageSourcePropType } from 'react-native';
 import importedIcons from "./icons";
 import importedImages from "./images";
 
@@ -6,7 +7,7 @@ interface Icons {
 }
 
 interface Images {
-  [key: string]: string;
+  [key: string]: ImageSourcePropType;
 }
 
 export const icons: Icons = importedIcons;

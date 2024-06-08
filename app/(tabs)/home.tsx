@@ -7,7 +7,6 @@ import { images } from '@/constants';
 import SearchInput from '@/components/SearchInput';
 import Trending from '@/components/Trending';
 import EmptyState from '@/components/EmptyState';
-import { Models } from 'react-native-appwrite';
 
 interface Post {
     $id: string;
